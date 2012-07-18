@@ -1,0 +1,29 @@
+{
+  "name": "xmlb",
+  "version": "0.0.0",
+  "description": "XML builder templates for Node.js.",
+  "keywords": ["xml", "template", "view", "engine", "express"],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaredhanson/xmlb.git"
+  },
+  "bugs": {
+    "url": "http://github.com/jaredhanson/xmlb/issues"
+  },
+  "author": { "name": "Jared Hanson", "email": "jaredhanson@gmail.com", "url": "http://www.jaredhanson.net/" },
+  "licenses": [ {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/MIT" 
+  } ],
+  "main": "./lib",
+  "dependencies": {
+    "xmlbuilder": "0.3.x"
+  },
+  "devDependencies": {
+    "vows": "0.6.x"
+  },
+  "scripts": {
+    "test": "NODE_PATH=lib node_modules/.bin/vows test/*-test.js"
+  },
+  "engines": { "node": ">= 0.4.0" }
+}

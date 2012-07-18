@@ -1,0 +1,2 @@
+xml.begin('root')
+  .ele('hello', {'name': name })
