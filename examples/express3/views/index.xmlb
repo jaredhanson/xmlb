@@ -1,0 +1,6 @@
+var hero = xml.begin('superhero', { 'version': '1.0' });
+
+hero.e('name', { 'primary': 'true' }).t(name)
+aliases.forEach(function(alias) {
+  hero.e('alias').t(alias);
+});

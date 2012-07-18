@@ -1,0 +1,8 @@
+{
+  "name": "xmlb-example",
+  "version": "0.0.0",
+  "dependencies": {
+    "express": "3.x.x",
+    "xmlb": "0.x.x"
+  }
+}
