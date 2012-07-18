@@ -103,4 +103,47 @@ vows.describe('xmlb').addBatch({
     },
   },
   
+  'useful stack traces': {
+    topic: function(redirect) {
+      var self = this;
+      
+      var str = [
+        "xml.begin('root')",
+        "  .ele('hello', {'name': name })" // Failing line 
+      ].join("\n");
+      
+      xmlb.render(str, function(err, res) {
+        self.callback(err, res);
+      });
+    },
+    
+    'should error' : function(err, res) {
+      assert.strictEqual(err.name, 'ReferenceError');
+      assert.include(err.message, 'name is not defined');
+      assert.include(err.message, 'xmlb:');
+    },
+  },
+  
+  'non useful stack traces': {
+    topic: function(redirect) {
+      var self = this;
+      var options = { compileDebug: false };
+      
+      var str = [
+        "xml.begin('root')",
+        "  .ele('hello', {'name': name })" // Failing line 
+      ].join("\n");
+      
+      xmlb.render(str, options, function(err, res) {
+        self.callback(err, res);
+      });
+    },
+    
+    'should error' : function(err, res) {
+      assert.strictEqual(err.name, 'ReferenceError');
+      assert.include(err.message, 'name is not defined');
+      assert.equal(err.message.indexOf('xmlb:'), -1);
+    },
+  },
+  
 }).export(module);
