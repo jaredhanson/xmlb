@@ -1,6 +1,6 @@
 {
   "name": "xmlb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "XML builder templates for Node.js.",
   "keywords": ["xml", "template", "view", "engine", "express"],
   "repository": {
